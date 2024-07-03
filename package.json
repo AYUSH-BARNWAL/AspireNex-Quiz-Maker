@@ -7,7 +7,7 @@
     "server": "cd backend && pnpm run dev",
     "client": "cd frontend && pnpm run start",
     "dev": "concurrently \"pnpm run server\" \"pnpm run client\"",
-    "build": "concurrently \"cd backend && pnpm run build\" \"cd frontend && pnpm run build && copyfiles build/** ../backend/dist/client\"",
+    "build": "concurrently \"cd backend && pnpm i && pnpm run build\" \"cd frontend && pnpm i && pnpm run build && copyfiles build/** ../backend/dist/client\"",
     "start": "cd backend && pnpm run start",
     "start:build": "pnpm run build && pnpm run start"
   },
