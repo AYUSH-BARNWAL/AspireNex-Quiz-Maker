@@ -60,11 +60,12 @@ app.use("/rest", restRouter);
 
 // Serve static assets in production
 if (process.env.NODE_ENV === "production") {
+  console.log(__dirname);
   // Set static folder
-  app.use(express.static(path.join(process.cwd(), "dist/client/build")));
+  app.use(express.static(path.join(__dirname, "../dist/client/build")));
 
   app.get("*", (req, res) =>
-    res.sendFile(path.resolve(process.cwd(),"dist", "client", "build", "index.html")),
+    res.sendFile(path.resolve(__dirname,"../../frontend", "build", "index.html")),
   );
 }
 
